@@ -13,7 +13,7 @@ export default class App extends Component {
 
   componentDidMount() {
     axios
-      .post("http://localhost:8081/is_authenticated", {
+      .post("http://10.8.15.152:8081/is_authenticated", {
         token: localStorage.getItem("token"),
       })
       .then((res) => {
@@ -48,7 +48,7 @@ export default class App extends Component {
     };
 
     axios
-      .post("http://localhost:8081/autenticar", { ...info })
+      .post("http://10.8.15.152:8081/autenticar", { ...info })
       .then((res) => {
         console.log(res.data);
         localStorage.setItem("token", res.data.token);
